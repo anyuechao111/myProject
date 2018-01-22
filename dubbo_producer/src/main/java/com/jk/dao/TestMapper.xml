@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.dao.TestMapper" >
+	<select id="getTotal" resultType="java.lang.Integer">
+		SELECT COUNT(0) FROM a_shop
+	</select>
+	<select id="querylist" resultType="com.jk.pojo.Test">
+		SELECT shopid AS id, shopname AS name, shopprice AS price, shopdate AS date 
+		FROM a_shop limit #{start},#{pageSize}
+	</select>
+</mapper>
